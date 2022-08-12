@@ -1,0 +1,9 @@
+{
+    "Misc": {
+        "runtime" : "Shows how long the bot has been online for"
+    },
+    "Roblox": {
+        "finduser" : "Find a user from roblox with their username"
+    }
+
+}

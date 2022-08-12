@@ -1,0 +1,72 @@
+Command raised an exception: ExtensionFailed: Extension 'cogs.developer' raised an error: TypeError: Callback must be a coroutine.
+Command raised an exception: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+Command "misc" is not found
+Command "test" is not found
+You are missing at least one of the required roles: '1003142166794747965'
+Member "me" not found.
+Member "me" not found.
+Command "ss" is not found
+Command raised an exception: ExtensionFailed: Extension 'cogs.setup' raised an error: ValueError: SlashApplicationCommand echo <function Example.what at 0x000001973A8105E0> Type `<generator object Client.get_all_channels at 0x000001973A6F4E40>` isn't a supported typehint for Application Commands.
+Command raised an exception: ExtensionNotLoaded: Extension 'cogs.setup' has not been loaded.
+Command raised an exception: ExtensionFailed: Extension 'cogs.setup' raised an error: ValueError: SlashApplicationCommand echo <function Example.what at 0x000001973A810AF0> Type `<generator object Client.get_all_channels at 0x000001973A76CE40>` isn't a supported typehint for Application Commands.
+Command raised an exception: ExtensionNotLoaded: Extension 'cogs.moderationtool' has not been loaded.
+Command raised an exception: ExtensionNotLoaded: Extension 'cogs.moderation' has not been loaded.
+Command raised an exception: ExtensionFailed: Extension 'cogs.moderationtools' raised an error: SyntaxError: invalid syntax (moderationtools.py, line 87)
+Command raised an exception: ExtensionNotLoaded: Extension 'cogs.moderationtools' has not been loaded.
+Command raised an exception: ExtensionFailed: Extension 'cogs.moderationtools' raised an error: TypeError: slash_command() got an unexpected keyword argument 'aliases'
+Command raised an exception: ExtensionNotLoaded: Extension 'cogs.all' has not been loaded.
+Command raised an exception: ExtensionFailed: Extension 'cogs.developer' raised an error: AttributeError: module 'nextcord.ext.commands' has no attribute 'Cogs'
+Command raised an exception: ExtensionFailed: Extension 'cogs.developer' raised an error: AttributeError: module 'nextcord.ext.commands' has no attribute 'Cogs'
+Command "fagli" is not found
+Command "test" is not found
+Command "d" is not found
+Command "d" is not found
+Command "s" is not found
+Command "faglist_add" is not found
+Command "promote" is not found
+member is a required argument that is missing.
+Command "ban" is not found
+Command "->" is not found
+Command "demote" is not found
+Command "giverole" is not found
+Command "role" is not found
+Command "role" is not found
+Command "giverole" is not found
+Command "purge" is not found
+Command "role" is not found
+You are missing at least one of the required roles: '1003142166794747965'
+Command "faglist" is not found
+group is a required argument that is missing.
+Command "faglist" is not found
+image is a required argument that is missing.
+Command raised an exception: AttributeError: 'NoneType' object has no attribute 'send'
+Command "hel" is not found
+Command raised an exception: AttributeError: 'NoneType' object has no attribute 'send'
+Command raised an exception: AttributeError: 'NoneType' object has no attribute 'send'
+Command raised an exception: AttributeError: 'NoneType' object has no attribute 'send'
+Command raised an exception: AttributeError: 'NoneType' object has no attribute 'send'
+Command raised an exception: AttributeError: '_MissingSentinel' object has no attribute 'request'
+Command raised an exception: AttributeError: '_MissingSentinel' object has no attribute 'request'
+Command raised an exception: ExtensionNotLoaded: Extension 'cogs.all' has not been loaded.
+Command raised an exception: ExtensionNotLoaded: Extension 'cogs.all' has not been loaded.
+Command "faglist" is not found
+Command raised an exception: AttributeError: module 'nextcord.guild' has no attribute 'emojis'
+Command raised an exception: InvalidArgument: emoji argument must be str, Emoji, or Reaction not NoneType.
+Command raised an exception: InvalidArgument: emoji argument must be str, Emoji, or Reaction not NoneType.
+Command "purge" is not found
+Command "whois" is not found
+Command "giverole" is not found
+Command "ban" is not found
+Command "ban" is not found
+Command "ban" is not found
+Command "ban" is not found
+Command "ban" is not found
+Command "members" is not found
+Command raised an exception: AttributeError: 'Bot' object has no attribute 'get_owner'
+Command "balls" is not found
+Command "f" is not found
+Command "reload_all" is not found
+extension is a required argument that is missing.
+Command raised an exception: ModuleNotFoundError: No module named 'cogs.cogs'
+Command raised an exception: ExtensionNotLoaded: Extension 'cogs.cogs.developer' has not been loaded.
+Command "unload" is not found

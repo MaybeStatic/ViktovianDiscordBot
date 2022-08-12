@@ -1,0 +1,2 @@
+Command "help" is not found
+Command raised an exception: TypeError: __init__() got an unexpected keyword argument 'label'
