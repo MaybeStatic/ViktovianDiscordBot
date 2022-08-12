@@ -14,7 +14,7 @@ class moderation(commands.Cog):
     testServerId = 996903763770085398
 
     # Commands
-    # Rememberrr
+    # Remember
     @nextcord.slash_command(name="ban", description="Bans a user from the server", guild_ids=[testServerId])
     @application_checks.has_any_role(1003142166794747965)
     async def ban(self, interaction: Interaction, member: nextcord.Member, *, reason=None):

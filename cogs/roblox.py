@@ -1,11 +1,8 @@
-from code import interact
-
 import nextcord
 from nextcord import Interaction, SlashOption
 from nextcord.ext import application_checks
 from nextcord.ext import commands
 from ro_py import Client
-from ro_py import utilities
 from ro_py.thumbnails import ThumbnailSize, ThumbnailType
 
 from robloxsecret import secret
@@ -26,7 +23,6 @@ class RobloxCommands(commands.Cog):
         #     username = username.nick.split(" ",1) [0]
         user = await roblox.get_user_by_username(username)
         embed = nextcord.Embed(title=f"Info for {user.name}")
-        status = await user.get_status()
         embed.add_field(
             name="Username",
             value="`" + user.name + "`",
@@ -49,7 +45,7 @@ class RobloxCommands(commands.Cog):
         )
         embed.add_field(
             name="Description",
-            value="```" + ((user.description or "No description")) + "```",
+            value="```" + (user.description or "No description") + "```",
             inline=True
         )
         avatar_image = await user.thumbnails.get_avatar_image(
@@ -93,7 +89,7 @@ class RobloxCommands(commands.Cog):
         member = await group.get_member_by_username(realuser)
         try:
             await member.promote()
-        except utilities.errors.NotFound:
+        except:
             interaction.response.send_message(f"{member.name} not in the group")
         embed = nextcord.Embed(title=f"Rank update:", description=f"{realuser} has been promoted", color=0xa3f0f0)
         await interaction.response.send_message(embed=embed)
@@ -131,7 +127,7 @@ class RobloxCommands(commands.Cog):
             await member.setrole(rank)  # Sets the rank
             await interaction.response.send_message("Promoted user.")
         else:
-            await interact("Rank must be at least 1 and at most 255.")
+            await interaction.response.send_message("Rank must be at least 1 and at most 255.")
 
     @nextcord.slash_command(name="groupinfo", description="Get information about a group with the ID")
     async def groupinfo(self, interaction: Interaction, groupid: int):
