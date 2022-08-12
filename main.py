@@ -76,8 +76,11 @@ async def on_member_join(member):
     msg = f"Welcome to {guild.name} {member.mention}, you are the {members} member."
     await welcome.send(msg)
     await membercountchannel.edit(name='Member count: {}'.format(membercountchannel.guild.member_count))
-
-
+@client.slash_command(guild_ids=[testServerId])
+async def membercount(interaction: Interaction):
+    membercountchannel = client.get_channel(1006998059227553923)
+    await membercountchannel.edit(name='Member count: {}'.format(membercountchannel.guild.member_count))
+    await interaction.response.send_message("Updated the member count", ephemeral=True)
 @client.event
 async def on_ready():
     membercountchannel = client.get_channel(1006998059227553923)
