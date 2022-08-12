@@ -4,7 +4,8 @@
     },
     "Roblox": {
         "finduser" : "Find a user from roblox with their username",
-        "promote": "/promote <username>: promotes a user"
+        "promote": "/promote <username>: promotes a user",
+        "demote": "/demote <username>: demotes a user"
     }
 
 }
