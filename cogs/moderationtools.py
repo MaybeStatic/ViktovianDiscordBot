@@ -17,23 +17,22 @@ class moderation(commands.Cog):
     # Remember
     @nextcord.slash_command(name="ban", description="Bans a user from the server", guild_ids=[testServerId])
     @application_checks.has_any_role(1003142166794747965)
-    async def ban(self, interaction: Interaction, member: nextcord.Member, *, reason=None):
-        if member == None:
-            await interaction.response.send_message("You cannot ban yourself")
+    async def ban(self, interaction: Interaction, member: nextcord.Member, reason=None):
+        if member.id == interaction.user.id:
+            await interaction.response.send_message("You cannot ban yourself", ephemeral=True)
             return
+        logs = self.client.get_channel(1004003980432654336)
         if reason == None:
             reason = "For being a jerk!"
-        await member.ban(reason=reason)
+        await member.ban(reason=reason, delete_message_days=0)
+        avatar = interaction.user.avatar
         embed = nextcord.Embed(title=f'User {member} has been banned')
         await interaction.response.send_message(embed=embed)
-        print(f"banned {member}")
 
-    @nextcord.slash_command(name="showchannel")
-    @application_checks.has_any_role(1003142166794747965)
-    async def checkchannel(self, interaction: Interaction):
-        logs = self.client.get_channel(1004003980432654336)
-        await logs.send("worked")
-        await interaction.response.send_message("Worked")
+        embed = nextcord.Embed(title=f"ban {member} reason: {reason}", color=15158332)
+        embed.set_author(name=f"{interaction.user}", icon_url=avatar)
+        embed.add_field(name=f"Used by:", value=interaction.user.mention)
+        await logs.send(embed=embed)
 
     @nextcord.slash_command(name="kick", description="Kick a user from the server", guild_ids=[testServerId])
     @application_checks.has_any_role(1003142166794747965)
@@ -51,11 +50,11 @@ class moderation(commands.Cog):
 
     @nextcord.slash_command(name="unban", guild_ids=[testServerId])
     @commands.has_any_role(1003142166794747965)
-    async def unban(self, interaction, member_id):
+    async def unban(self, interaction: Interaction, member_id):
         username = client.get_user(member_id)
         await client.unban(nextcord.Object(id=member_id))
         embed = nextcord.Embed(title=f'User {username} has been unbanned')
-
+        await interaction.response.send_message(embed=embed)
     @nextcord.slash_command(name="purge", description="Mass deletes messgaes from the server", guild_ids=[testServerId])
     @application_checks.has_any_role(1003142166794747965)
     async def purge(self, interaction: Interaction, amount: int):
