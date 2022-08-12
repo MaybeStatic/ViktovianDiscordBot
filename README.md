@@ -1,1 +1,1 @@
-Doodoo discord bot used
+Doodoo discord bot
