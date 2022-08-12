@@ -9,7 +9,7 @@ class Subscriptions(nextcord.ui.View):
         self.value = None
 
     @nextcord.ui.button(label="Kiss octo", style=nextcord.ButtonStyle.blurple)
-    async def kissocto(self, button: nextcord.ui.Button, interaction: Interaction):
+    async def KissOcto(self, button: nextcord.ui.Button, interaction: Interaction):
         await interaction.response.send_message('You have kissed Octo',
                                                 ephemeral=False)  # If true: no one can see the message
         self.value = True
