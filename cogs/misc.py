@@ -9,7 +9,7 @@ from nextcord.ext import commands
 from main import start_time
 
 
-class misc(commands.Cog):
+class Misc(commands.Cog):
 
     def __init__(self, client):
         self.client = client
@@ -79,12 +79,16 @@ class misc(commands.Cog):
 
     @nextcord.slash_command(name="credits", description="Bot's credits", guild_ids=[testServerId]) #So I can get ma credit
     async def credits(self, interaction: Interaction):
-        octo = self.client.get_user(854721351050330123)
+        octo = await self.client.fetch_user(854721351050330123)
+        viking = await self.client.fetch_user(713229590667067413)
+        rosy = await self.client.fetch_user(568859344691527710)
         embed = nextcord.Embed(title="Credits")
-        embed.add_field(name="Created by:", value=octo.mention)
+        embed.add_field(name="`Created by:`", value=octo.mention)
+        embed.set_footer(text="Created on: 7/24/2022")
+        embed.add_field(name="`Helpers:`", value=f"{viking.mention} {rosy.mention}", inline=False)
         embed.set_thumbnail(url=octo.avatar)
         await interaction.response.send_message(embed=embed)
 
 
 def setup(client):
-    client.add_cog(misc(client))
+    client.add_cog(Misc(client))
