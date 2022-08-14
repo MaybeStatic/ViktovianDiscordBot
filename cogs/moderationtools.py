@@ -1,7 +1,8 @@
 import nextcord
-from nextcord import Interaction
+from nextcord import Interaction, SlashOption
 from nextcord.ext import application_checks
 from nextcord.ext import commands
+
 
 from main import client
 
@@ -17,14 +18,17 @@ class moderation(commands.Cog):
     # Remember
     @nextcord.slash_command(name="ban", description="Bans a user from the server", guild_ids=[testServerId])
     @application_checks.has_any_role(1003142166794747965)
-    async def ban(self, interaction: Interaction, member: nextcord.Member, reason=None):
+    async def ban(self, interaction: Interaction, member: nextcord.Member, delete_messages_days: int, reason=None):
+        if not 0 <= delete_messages_days <= 7:
+            await interaction.response.send_message("Please select a number between 0 and 7", ephemeral=True)
+            return
         if member.id == interaction.user.id:
             await interaction.response.send_message("You cannot ban yourself", ephemeral=True)
             return
         logs = self.client.get_channel(1004003980432654336)
         if reason == None:
             reason = "For being a jerk!"
-        await member.ban(reason=reason, delete_message_days=0)
+        await member.ban(reason=reason, delete_message_days=delete_messages_days)
         avatar = interaction.user.avatar
         embed = nextcord.Embed(title=f'User {member} has been banned')
         await interaction.response.send_message(embed=embed)
@@ -83,12 +87,6 @@ class moderation(commands.Cog):
     async def removerole(self, interaction: Interaction, member: nextcord.Member, role: nextcord.Role):
         await member.remove_roles(role)
         await interaction.response.send_message(f"Removed the {role} role from {member}")
-
-    @nextcord.slash_command(name="members", description="get all the members in the guild", guild_ids=[testServerId])
-    @application_checks.has_any_role(1003142166794747965)
-    async def members(self, interaction: Interaction):
-        members = list(client.get_all_members())
-        print(members)
 
 
 def setup(client):
