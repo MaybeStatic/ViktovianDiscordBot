@@ -77,6 +77,14 @@ class misc(commands.Cog):
     async def avatar(self, interaction: Interaction, user: nextcord.Member):
         await interaction.response.send_message(user.avatar.url)
 
+    @nextcord.slash_command(name="credits", description="Bot's credits", guild_ids=[testServerId])
+    async def credits(self, interaction: Interaction):
+        octo = self.client.get_user(854721351050330123)
+        embed = nextcord.Embed(title="Credits")
+        embed.add_field(name="Created by:", value=octo.mention)
+        embed.set_thumbnail(url=octo.avatar)
+        await interaction.response.send_message(embed=embed)
+
 
 def setup(client):
     client.add_cog(misc(client))
