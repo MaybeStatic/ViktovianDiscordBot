@@ -82,7 +82,7 @@ class Misc(commands.Cog):
         octo = await self.client.fetch_user(854721351050330123)
         viking = await self.client.fetch_user(713229590667067413)
         rosy = await self.client.fetch_user(568859344691527710)
-        embed = nextcord.Embed(title="Credits")
+        embed = nextcord.Embed(title="Viktovian Enginseer Credits:")
         embed.add_field(name="`Created by:`", value=octo.mention)
         embed.set_footer(text="Created on: 7/24/2022")
         embed.add_field(name="`Helpers:`", value=f"{viking.mention} {rosy.mention}", inline=False)
