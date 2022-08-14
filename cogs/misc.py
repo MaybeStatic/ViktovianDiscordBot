@@ -77,7 +77,7 @@ class misc(commands.Cog):
     async def avatar(self, interaction: Interaction, user: nextcord.Member):
         await interaction.response.send_message(user.avatar.url)
 
-    @nextcord.slash_command(name="credits", description="Bot's credits", guild_ids=[testServerId])
+    @nextcord.slash_command(name="credits", description="Bot's credits", guild_ids=[testServerId]) #So I can get ma credit
     async def credits(self, interaction: Interaction):
         octo = self.client.get_user(854721351050330123)
         embed = nextcord.Embed(title="Credits")
