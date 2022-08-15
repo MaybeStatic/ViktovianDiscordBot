@@ -153,6 +153,15 @@ for filename in os.listdir('./cogs'):
     if filename.endswith('.py'):
         client.load_extension(f"cogs.{filename[:-3]}")
         allcogs.append(f"cogs.{filename[:-3]}")
+@client.slash_command()
+async def getchannels(interaction:Interaction):
+    channels = {}
+    for guild in client.guilds:
+        for channel in guild.channels:
+            channels.update({f"{channel.name}":channel.id})
+    await interaction.response.send_message(channels, ephemeral=True)
+    
+
 
 if __name__ == '__main__':
     client.run(token)

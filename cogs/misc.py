@@ -89,6 +89,10 @@ class Misc(commands.Cog):
         embed.set_thumbnail(url=octo.avatar)
         await interaction.response.send_message(embed=embed)
 
-
+    @nextcord.slash_command(name="happybirthday", description="Wish Octo a happy birthday", guild_ids=[testServerId])
+    async def happybirthday(self, interaction: Interaction):
+        with open("wishes.txt", 'a') as file:
+            file.write(f"{interaction.user} wished you happy birthday\n")
+        await interaction.response.send_message("Octo thanks you")
 def setup(client):
     client.add_cog(Misc(client))

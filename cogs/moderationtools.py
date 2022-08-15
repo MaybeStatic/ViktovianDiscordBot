@@ -33,7 +33,7 @@ class moderation(commands.Cog):
         embed = nextcord.Embed(title=f'User {member} has been banned')
         await interaction.response.send_message(embed=embed)
 
-        embed = nextcord.Embed(title=f"ban {member} reason: {reason}", color=15158332)
+        embed = nextcord.Embed(title=f"banned {member} reason: {reason}", color=15158332)
         embed.set_author(name=f"{interaction.user}", icon_url=avatar)
         embed.add_field(name=f"Used by:", value=interaction.user.mention)
         await logs.send(embed=embed)
