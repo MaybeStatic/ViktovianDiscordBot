@@ -22,7 +22,20 @@ class Example(commands.Cog):
                 await member.ban(reason=None)
                 print("works")
                 # Commands
+    
+    # @commands.Cog.listener()
+    # async def on_message(self, msg):
+    #     if "+" in msg.content:
+    #         msglist = str(msg.content).split(" ")
+    #         numbers = []
+    #         for x in msglist:
+    #             try:
+    #                 numbers.append(int(x))
+    #             except ValueError:
+    #                 pass
+    #         await msg.channel.send(sum(numbers))
 
+  
 
 def setup(client):
     client.add_cog(Example(client))

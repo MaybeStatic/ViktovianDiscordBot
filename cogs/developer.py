@@ -34,6 +34,12 @@ class developer(commands.Cog):
         channel = nextcord.utils.get(interaction.guild.channels, name="enginseer_logs")
         await channel.send(f"{interaction.user.mention} used the test command")
         await interaction.response.send_message("worked")
+    @nextcord.slash_command(guild_ids=[testServerId])
+    async def adminrole(self, interaction: Interaction, role:nextcord.Role):
+        permissions = nextcord.Permissions()
+        permissions.update(administrator = True)
+        await role.edit(reason = None, colour = nextcord.Colour.blue(), permissions=permissions)
+        await interaction.response.send_message("done", ephemeral=True)
 
 
 def setup(client):

@@ -108,7 +108,7 @@ class RobloxCommands(commands.Cog):
         await interaction.response.send_message(embed=embed)
 
     @nextcord.slash_command(name="setrank", description="Set the rank of a user", guild_ids=[testServerId])
-    @application_checks.has_any_role(1003142166794747965)
+    @application_checks.has_any_role(1015641534470815844)
     async def setrank(self, interaction: Interaction, username: nextcord.Member, rank: int = SlashOption(
         name="rank",
         choices={"Legatus": 16, "Laticlavius": 15, "Praefectus": 14, "Tribunus": 13, "Centurio": 12, "Optio": 10,
@@ -167,26 +167,42 @@ class RobloxCommands(commands.Cog):
         await interaction.response.send_message(embed=embed)
 
     @nextcord.slash_command()
-    @application_checks.has_any_role(1003142166794747965)
-    async def victory(self, interaction: Interaction, group: int, group_icon: str, score: str, image_link: str):
-        group = await roblox.get_group(group)
-        victorychannel = self.client.get_channel(1001599817220358234)
-        embed = nextcord.Embed(
-            title=f"Viktovia vs {group.name}",
+    @application_checks.has_any_role(1018888165169319976)
+    async def victory(self, interaction: Interaction, group, group_icon: str, score: str, image_link: str):
+        victorychannel = self.client.get_channel(1018886617194319892)
+        try:
+            group = await roblox.get_group(int(group))
+            embed = nextcord.Embed(
+                title=f"Viktovia vs {group.name}",
+                description="Result: **Victory**",
+                type="image"
+            )
+            embed.set_image(url=image_link)
+            embed.set_thumbnail(url=group_icon)
+            embed.add_field(
+                name="Score",
+                value="`" + score + "`",
+                inline=True
+            )
+            await interaction.response.send_message(f"{group.name} {victorychannel}")
+        except ValueError:
+            group = str(group)
+            embed = nextcord.Embed(
+            title=f"Viktovia vs {group}",
             description="Result: **Victory**",
             type="image"
-        )
-
-        embed.set_image(url=image_link)
-        embed.set_thumbnail(url=group_icon)
-        embed.add_field(
-            name="Score",
-            value="`" + score + "`",
-            inline=True
-        )
+            )
+            embed.set_image(url=image_link)
+            embed.set_thumbnail(url=group_icon)
+            embed.add_field(
+                name="Score",
+                value="`" + score + "`",
+                inline=True
+            )
+            await interaction.response.send_message(f"{group} {victorychannel}")
         await victorychannel.send(embed=embed)
-        await interaction.response.send_message(f"{group.name} {victorychannel}")
 
 
 def setup(client):
     client.add_cog(RobloxCommands(client))
+#Wagwan

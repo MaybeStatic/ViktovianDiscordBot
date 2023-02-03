@@ -53,7 +53,6 @@ class errors(commands.Cog):
                 await ctx.reply(f"Current last error: {line}", mention_author=False)
 
     @commands.command()
-    @commands.has_any_role(1003142166794747965)
     async def clearerrors(self, ctx):
         with open('errorfile.txt', 'r+') as file:
             file.truncate(0)

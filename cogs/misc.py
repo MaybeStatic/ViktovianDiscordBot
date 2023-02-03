@@ -74,8 +74,14 @@ class Misc(commands.Cog):
         await ctx.response.send_message(embed=embed)
 
     @nextcord.slash_command(name="avatar", description="Get the avatar of a user", guild_ids=[testServerId])
-    async def avatar(self, interaction: Interaction, user: nextcord.Member):
-        await interaction.response.send_message(user.avatar.url)
+    async def avatar(self, interaction: Interaction, user: nextcord.Member = None):
+        #user.avatar.url
+        if user is None:
+            user = interaction.user
+        embed = nextcord.Embed(title="Avatar", type="image")
+        embed.set_author(name=user,icon_url=user.avatar.url)
+        embed.set_thumbnail(url=user.avatar)
+        await interaction.response.send_message(embed=embed)
 
     @nextcord.slash_command(name="credits", description="Bot's credits", guild_ids=[testServerId]) #So I can get ma credit
     async def credits(self, interaction: Interaction):

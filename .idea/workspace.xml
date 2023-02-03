@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5a168b6b-4953-48cd-b80f-5a6655345574" name="Changes" comment="more testing">
+    <list default="true" id="5a168b6b-4953-48cd-b80f-5a6655345574" name="Changes" comment="minor fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cogs/developer.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/developer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cogs/errors.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/errors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cogs/misc.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/misc.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cogs/moderationtools.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/moderationtools.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cogs/roblox.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/roblox.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cogs/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660268454540</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="minor fixes">
+      <created>1660589574169</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1660589574169</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -149,6 +162,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="testing" />
     <MESSAGE value="more testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="more testing" />
+    <MESSAGE value="minor fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor fixes" />
   </component>
 </project>
